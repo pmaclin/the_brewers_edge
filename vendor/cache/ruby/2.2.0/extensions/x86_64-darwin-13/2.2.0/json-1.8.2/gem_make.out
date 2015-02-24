@@ -1,0 +1,9 @@
+/Users/pmac/.rvm/rubies/ruby-2.2.0/bin/ruby -r ./siteconf20150224-39500-18mmt6g.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+make "DESTDIR=" install
