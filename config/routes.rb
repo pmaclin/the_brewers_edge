@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Brew resource:
+  # CREATE
+  get '/brews/new',      :controller => 'brews', :action => 'new',    :as => 'new_brew'
+  post '/brews',         :controller => 'brews', :action => 'create', :as => 'brews'
+
+  # READ
+  get '/brews',          :controller => 'brews', :action => 'index'
+  get '/brews/:id',      :controller => 'brews', :action => 'show',   :as => 'brew'
+
+  # UPDATE
+  get '/brews/:id/edit', :controller => 'brews', :action => 'edit',   :as => 'edit_brew'
+  patch '/brews/:id',    :controller => 'brews', :action => 'update'
+
+  # DELETE
+  delete '/brews/:id',   :controller => 'brews', :action => 'destroy'
+  #------------------------------
+
   # Routes for the Standard resource:
   # CREATE
   get '/standards/new',      :controller => 'standards', :action => 'new',    :as => 'new_standard'
