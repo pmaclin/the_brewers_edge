@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Batch resource:
+  # CREATE
+  get '/batches/new',      :controller => 'batches', :action => 'new',    :as => 'new_batch'
+  post '/batches',         :controller => 'batches', :action => 'create', :as => 'batches'
+
+  # READ
+  get '/batches',          :controller => 'batches', :action => 'index'
+  get '/batches/:id',      :controller => 'batches', :action => 'show',   :as => 'batch'
+
+  # UPDATE
+  get '/batches/:id/edit', :controller => 'batches', :action => 'edit',   :as => 'edit_batch'
+  patch '/batches/:id',    :controller => 'batches', :action => 'update'
+
+  # DELETE
+  delete '/batches/:id',   :controller => 'batches', :action => 'destroy'
+  #------------------------------
+
   # Routes for the Review resource:
   # CREATE
   get '/reviews/new',      :controller => 'reviews', :action => 'new',    :as => 'new_review'
