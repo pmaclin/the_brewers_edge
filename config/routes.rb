@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Standard resource:
+  # CREATE
+  get '/standards/new',      :controller => 'standards', :action => 'new',    :as => 'new_standard'
+  post '/standards',         :controller => 'standards', :action => 'create', :as => 'standards'
+
+  # READ
+  get '/standards',          :controller => 'standards', :action => 'index'
+  get '/standards/:id',      :controller => 'standards', :action => 'show',   :as => 'standard'
+
+  # UPDATE
+  get '/standards/:id/edit', :controller => 'standards', :action => 'edit',   :as => 'edit_standard'
+  patch '/standards/:id',    :controller => 'standards', :action => 'update'
+
+  # DELETE
+  delete '/standards/:id',   :controller => 'standards', :action => 'destroy'
+  #------------------------------
+
   # Routes for the Batch resource:
   # CREATE
   get '/batches/new',      :controller => 'batches', :action => 'new',    :as => 'new_batch'
